@@ -1,0 +1,483 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+
+    
+    body {
+      font-size: 1.2vw;
+      background-color: beige;
+      border: 1px solid black;
+      padding: 5vh;
+      font-family: 'Gothic A1', sans-serif;
+      letter-spacing: -0.5px;
+      word-spacing: 3px;
+      line-height: 1.8;
+      word-wrap: break-word;
+    }
+    .Header {
+      font-family: 'Inter', 'Noto Sans KR', sans-serif;
+      font-weight: 500;
+      text-align: center;
+      padding: 20px;
+      border: 1px solid black;
+    }
+    .BookInfo {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 50vh;
+    }
+    .BookDescription {
+      text-align: center;
+      padding: 100px;
+      box-sizing: border-box;
+    }
+    .BookTitle {
+      font-size: 2em;
+    }
+    .wrapper {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    .left-column, .right-column {
+      flex: 1;
+      padding: 20px;
+      text-align: center;
+    }
+    .column-image {
+      width: 100%;
+      height: auto;
+    }
+    .same-size-image {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    .outer-wrapper {
+    border: 1px solid black;
+    padding: 10px;
+    margin-bottom: 20px;
+    outline: none;
+  }
+
+  .inner-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .column-image {
+    width: 100%;
+    height: auto;
+  }
+
+  .author-info {
+    text-align: center;
+    margin: auto;
+    width: 50%;
+  }
+
+  .author-name {
+    margin: 0;
+  }
+
+ #header{
+    width: 100vw;
+    height: 7vw;
+    margin-top: -2vw;
+    border-bottom: 1px solid black;
+    background-color: beige;
+    
+    font-size: 2.5vw; 
+  word-wrap: break-word; 
+  letter-spacing: -.5px;
+  word-spacing: 3px; 
+  font-family: 'Inter','Noto Sans KR',sans-serif;
+  font-weight: 500; 
+    text-align: left;
+    
+    /* position: fixed; */ /* 이 부분을 주석 처리하거나 삭제합니다. */
+    z-index: 2;
+}
+
+
+#header ul li{
+    padding: 0 5px;
+    float: left;
+    display: block;
+    list-style: none;
+    margin-top: 2vw;
+    margin-left: 2vw;
+}
+
+.bookname{
+  font-size: 2vw;
+  padding: 0.3vw;
+}
+
+.칵테일:hover{
+  font-weight: 900;
+  transition: 1s;
+}
+
+.모눈지우개:hover{
+  font-weight: 900;
+  transition: 1s;
+}
+
+#bodyall {
+    margin: 2vw;
+    padding: 0;
+    background-color: beige;
+  }
+
+  a{
+    text-decoration: none;
+    color: black;
+  }
+
+  * {margin:0;padding:0;}
+  .section {clear: both; border-bottom: 1px solid black;}
+  .section input[id*="slide"] {display:none;}
+
+  .section .slide-wrap {max-width:1200px;margin:0 auto;}
+  .section .slidelist {white-space:nowrap;font-size:0;overflow:hidden;}
+  .section .slidelist > li {display:inline-block;vertical-align:middle;width:100%;transition:all .5s;}
+  .section .slidelist > li > a {display:block;position:relative;}
+  .section .slidelist > li > a img {width:100%;}
+  .section .slidelist label {position:absolute;z-index:10;top:50%;transform:translateY(-50%);padding:50px;cursor:pointer;}
+  .section .slidelist .left {left:1vw;background:url('./img/left.png') center center / 15vw no-repeat;}
+  .section .slidelist .right {right:1vw;background:url('./img/right.png') center center / 15vw no-repeat;}
+  .section .slidelist .textbox {position:absolute;z-index:1;top:50%;left:50%;transform:translate(-50%,-50%);line-height:1.6;text-align:center;}
+  
+  .section .slidelist .textbox p {font-size:24px;opacity:0;transform:translateY(30px);transition:all .5s;}
+  
+
+  .section input[id="slide01"]:checked ~ .slide-wrap .slidelist > li {transform:translateX(0%);}
+  .section input[id="slide02"]:checked ~ .slide-wrap .slidelist > li {transform:translateX(-100%);}
+  .section input[id="slide03"]:checked ~ .slide-wrap .slidelist > li {transform:translateX(-200%);}
+
+  .section input[id="slide01"]:checked ~ .slide-wrap li:nth-child(1) .textbox p {opacity:1;transform:translateY(0);transition-delay:.4s;}
+  .section input[id="slide02"]:checked ~ .slide-wrap li:nth-child(2) .textbox p {opacity:1;transform:translateY(0);transition-delay:.4s;}
+  .section input[id="slide03"]:checked ~ .slide-wrap li:nth-child(3) .textbox p {opacity:1;transform:translateY(0);transition-delay:.4s;}
+
+    .section .slidelist .textbox span {font-size:24px;opacity:0;transform:translateY(30px);transition:all .5s;}
+
+  .section input[id="slide01"]:checked ~ .slide-wrap li:nth-child(1) .textbox span {opacity:1;transform:translateY(0);transition-delay:.4s;}
+  .section input[id="slide02"]:checked ~ .slide-wrap li:nth-child(2) .textbox span {opacity:1;transform:translateY(0);transition-delay:.4s;}
+  .section input[id="slide03"]:checked ~ .slide-wrap li:nth-child(3) .textbox span {opacity:1;transform:translateY(0);transition-delay:.4s;}
+  
+.section .slidelist .textbox div {
+        width: 100%;
+        height: 45vw;
+      }
+.section .slidelist .textbox div.left1 {
+        width: 50%;
+        float: left;
+        margin-top: 18vw;
+      }
+.section .slidelist .textbox div.right2 {
+        width: 50%;
+        float: right;
+        text-align: center;
+        margin-top: 35vw;
+      }
+
+.section .slidelist .textbox div.left2 {
+        width: 50%;
+        float: left;
+        margin-top: 20vw;
+        margin-left: -1vw;
+      }
+
+.section .slidelist .textbox div.right3 {
+  font-family: 'Inter', 'Noto Sans KR', sans-serif;
+    font-size: 1.7vw;
+    letter-spacing: -0.5px;
+    word-spacing: 3px;
+    text-align: left; 
+    line-height: 3vw;
+    margin-left: 2.5vw;
+    margin-top: -8vw;
+}
+
+  #article01 {
+  height: 107vw;
+    padding: 2vw;
+    margin-top: 3vw;
+    border-bottom: 1px solid black;
+
+    word-wrap: break-word; 
+
+    font-size: 1.2vw; 
+  letter-spacing: -.5px;
+  word-spacing: 3px; 
+  line-height: 1.8; 
+  font-family: 'Inter','Noto Sans KR',sans-serif;
+  font-weight: 500; 
+    text-align: left;
+  }
+
+  .row0{
+    width: 100%;
+    height: 45vw;
+  }
+  .left0{
+        width: 50%;
+        float: left;
+
+  }
+
+  .right0{
+        width: 50%;
+        float: right;
+        text-align: left;
+        margin-top: 35vw;
+    }
+
+
+  #article02{
+    padding: 2vw;
+    margin-top: 2vw;
+
+    font-size: 1.2vw; 
+  letter-spacing: -.5px;
+  word-spacing: 3px; 
+  line-height: 1.8; 
+  font-family: 'Inter','Noto Sans KR',sans-serif;
+  font-weight: 500; 
+    text-align: left;
+}
+
+    .gallerylist {width:80vw; height: 30vw;}
+  .gallerylist > ul {font-size:0;}
+  .gallerylist > ul > li {display:inline-block;vertical-align:top;width:25%;margin-right: 1.5vw;}
+  .gallerylist > ul > li > a {display:block;width:auto;text-decoration: none;}
+  .gallerylist > ul > li > a .screen {position:relative;overflow:hidden;}
+  .gallerylist > ul > li > a .screen .top {position:absolute;top:100%;left:1.2vw;z-index:2;font-size:1.8vw;word-spacing: 1px;font-weight:900;transition:all .35s;}
+  .gallerylist > ul > li > a .screen .top1 {position:absolute;top:100%;left:1.2vw;z-index:2;font-size:1.8vw;word-spacing: 1px;font-weight:900;transition:all .35s;}
+  .gallerylist > ul > li > a .screen .bottom {position:absolute;top:100%;left:1.2vw;z-index:2;font-size:1.5vw;word-spacing: 1px;transition:all .35s;}
+  .gallerylist > ul > li > a .screen img {width:20vw;}
+  .gallerylist > ul > li > a .screen::after {content:'';display:block;position:absolute;top:100%;left:0;width:100%;height:100%;background:white;z-index:z;opacity:0;transition:all .30s;}
+  .gallerylist > ul > li > a:hover .top {top:40%;}
+  .gallerylist > ul > li > a:hover .top1 {top:30%;}
+  .gallerylist > ul > li > a:hover .bottom {top:52%;}
+  .gallerylist > ul > li > a:hover .screen::after {opacity:1; top:0%}
+
+
+  #footer{
+    margin-top: 10px;
+    height: 20vw;
+    padding: 20px;
+
+    font-size: 1.2vw; 
+  letter-spacing: -.5px;
+  word-spacing: 3px; 
+  line-height: 1.8; 
+  font-family: 'Inter','Noto Sans KR',sans-serif;
+  font-weight: 500; 
+  text-align: center;
+
+    border-top: 1px solid black;
+    overflow: hidden;
+}
+
+  .buy{
+    border: 1px solid black;
+    border-radius: 30vw;
+    width: 10vw;
+    padding: 1vw;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 2vw;
+  }
+
+  .buy:hover{
+    background-color: black;
+    color: white;
+    transition: 0.5s;
+  }
+
+
+</style>
+</head>
+<body>
+<div id="header">
+    <ul>
+        <li><b><a href="index.html">이달의 책</a></b></li>
+        <div class="bookname">
+          <div class="칵테일">
+            <li><a href="columm1.html">칵테일, 러브, 좀비</a></li>
+        </div>
+        <div class="모눈지우개">
+            <li><a href="columm2.html">모눈 지우개</a></li>
+        </div>
+      </div>
+    </ul>
+</div>
+
+    
+  </style>
+</head>
+<body>
+  <div class="Header">
+    <h1>이달의 책</h1>
+  </div>
+  <div class="BookInfo">
+    <div class="BookDescription">
+      <h2 class="BookTitle">&lt;칵테일, 러브, 좀비&gt;</h2>
+      <p>
+        <strong>이토록 생생한 어둠...</strong><br>
+        어떤 감정은 곧잘 무시당한다. 여성이라서, 자식이라서, 부유하지 못해서, 남들과 어울리지 못해서 겪는 어둡고 축축한 마음이 그렇다. 괴로움을 호소했다가는 너무 예민하다는 평가를 받는다. 그런 문제는 별것 아니라고들 한다. 조예은 작가는 《칵테일, 러브, 좀비》 속 모든 작품에서 홀대받는 감정들을 생생하게 끄집어내며 반기를 든다. 그러한 감정들에는 분명한 실체가 있으며 그 주인에게 구체적인 고통을 안긴다.<br>
+        <strong>잔혹함의 온기</strong> <br>
+        오랜 고통을 충분히 위로받지 못한 조예은 작가의 인물들은 어느 순간 손에 무기를 든다. 자신을 옭아맸던 사람, 그 사람을 만든 세상으로부터 벗어나기 위해서다. 확실한 결별을 원하는 그들은 세간의 도덕률을 가뿐하게 뛰어넘는다. 작가가 택한 스릴러, 호러라는 장르의 문법은 이 지점에서 이야기와 멋지게 맞아떨어진다. 잔혹한 장면을 곱씹을수록 느껴지는 것은 기묘하게도 다정함이다. 친구가 나를 괴롭힌 자들에게 악담을 퍼붓는다면 그 말의 거친 어감보다는 친구의 상냥한 마음씨가 더 크게 다가오는 것이다. 《칵테일, 러브, 좀비》 속의 총과 칼, 선혈과 비명 너머에 그 온기가 있다. 누구의 어떤 고통도 당연하지 않다. 우리는 더 분노해도 괜찮다. 손에 피를 묻히더라도 비난하지 않는다. 그저 붉게 물든 손을 맞잡고 앞으로 나아갈 따름이다. 지극히 장르소설다운, 장르소설이기에 가능한 공감법이다.
+
+      </p>
+    </div>
+  </div>
+  <div class="outer-wrapper">
+  <div class="inner-wrapper">
+    <div class="author-info">
+      <h3 class="author-name">작가소개<br><strong>조예은</strong></h3>
+      <p>제2회 황금가지 타임리프 공모전에서 〈오버랩 나이프, 나이프〉로 우수상을, 제4회 교보문고 스토리 공모전에서 《시프트》로 대상을 수상했으며 최근작으로는 안전가옥의 첫 번째 장편소설 《뉴서울파크 젤리장수 대학살》이 있다. 좋은 이야기에 대해 고민하며 작품 활동을 계속하는 중이다.</p>
+    </div>
+  </div>
+  <div class="image-container" style="text-align: center;">
+    <a href="https://www.yes24.com/Product/Goods/114336899" target="_blank">
+      <img src="https://image.yes24.com/goods/74820501/XL" class="author-image">
+    </a>
+    <a href="https://product.kyobobook.co.kr/detail/S000061584825" target="_blank">
+      <img src="https://image.yes24.com/goods/111704883/XL" class="author-image">
+    </a>
+    <a href="https://www.yes24.com/Product/Goods/114336899" target="_blank">
+      <img src="https://image.yes24.com/Goods/114336899/XL" class="author-image">
+    </a>
+  </div>
+</div>
+
+<style>
+  .image-container {
+    display: flex;
+    justify-content: center;
+  }
+
+  .author-image {
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    margin: 5px;
+  }
+</style>
+
+
+  <div class="outer-wrapper">
+  <div class="inner-wrapper">
+    <div class="left-column">
+      <p>
+        <strong>■ 줄거리</strong> <br>
+        〈초대〉<br>
+채원은 어렸을 적 억지로 회를 먹은 이후 17년째 목에 걸린 가시에 시달리고 있다. 남자친구 정현을 아끼던 마음에 균열이 생기면서 목구멍의 통증은 더해졌다. 정현의 마음에 들기 위해 부단히 노력했지만, 자존감을 무너뜨리면서까지 애쓰는 사람은 자신뿐이었던 것이다. 그 사이 채원 앞에 나타난 흐릿한 인상의 여자 태주는 정현의 핸드폰 메시지에서, 폐업한 리조트 광고지에서 모습을 보이며 서늘한 존재감을 더해 간다. 채원은 마치 태주의 초대를 받은 듯 그의 정체를 추적하기 시작한다. <br>
+〈습지의 사랑〉<br>
+물귀신 ‘물’은 인적 드문 하천에서 지루한 날들을 이어 가다 맞은편의 소나무 숲을 거니는 ‘숲’을 만난다. 물은 평소처럼 상대방을 놀라게 해 쫓아내려 했지만 숲은 반갑게 인사하며 웃음 짓는다. 그 이후 물의 마음은 숲으로 가득 차고, 둘은 종종 만나면서 가까워진다. 고즈넉했던 만남이 심각한 얼굴의 숲 출입자들 때문에 깨어지자, 물은 오래전 막 귀신이 될 무렵에 느꼈던 원망과 분노에 다시금 휩싸인다. <br>
+
+〈칵테일, 러브, 좀비〉<br>
+여느 때처럼 퇴근 후 직장 동료들과 술을 마셨던 주연의 아빠는 좀비가 된 채로 집에 돌아왔다. TV 뉴스에 나왔던 좀비 바이러스 1차 감염자들은 모두 사살되었다. 엄마와 주연은 정부가 조치 방안을 마련할 때까지만이라도 아빠를 데리고 있기로 하지만, 이미 인간의 이성을 잃은 아빠는 엄마를 제 먹이로 삼으려 든다. 주연은 고집불통이고 가부장적이었던 아빠를 완전히 미워하지도, 사랑하지도 못한 지난날을 돌아보며 아빠와의 이별을 준비한다. <br>
+
+〈오버랩 나이프, 나이프〉<br> 
+아버지가 어머니를 과도로 죽였다. 나는 그 과도를 받아 들고 아버지를 죽였다. 뒤이어 스스로를 죽이면서 한 가지 후회를 했다. 조금만 상황이 달랐다면 어머니는 살 수 있지 않았을까. 그때 누군가가 말했다. “시간을 되돌려 줄까?” 
+나는 수개월째 스토킹을 당하고 있다. 그는 몰래 내 자취방에까지 들어왔다. 옆 학교 남학생 덕분에 스토커에게서 벗어나게 되지만, 되돌아보면 그 남학생을 만나지 말았어야 했다. 그때 누군가가 말했다. “시간을 되돌려 줄까?” 나는 앞으로 겪게 될 일을 모른 채로 고개를 끄덕이고 말았다.
+      </p>
+    </div>
+    <div class="right-column">
+      <img src="https://image.yes24.com/goods/89913383/XL" class="column-image">
+    </div>
+  </div>
+</div>
+
+
+  <div class="outer-wrapper">
+  <div class="inner-wrapper">
+    <div class="left-column">
+      <p>
+        <strong>■ 목차</strong> <br>
+        초대 _ 6p <br>
+        습지의 사랑 _ 42p <br>
+        칵테일, 러브, 좀비 _ 74p <br>
+        오버랩 나이프, 나이프 _ 110p <br>
+        작품 후기 _ 158p <br>
+        프로듀서의 말 _ 162p
+      </p>
+    </div>
+    <div class="right-column">
+      <img src="https://oopy.lazyrockets.com/api/v2/notion/image?src=https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2F38c37c31-a137-4d78-93ad-5a6f8e1dd878%2F_.jpg&blockId=2f9bf505-670d-4a77-b329-1698fc008608" class="column-image">
+    </div>
+  </div>
+</div>
+
+<div class="outer-wrapper">
+  <div class="inner-wrapper">
+    <div class="left-column">
+      <p>
+        <strong>■ 책 속으로</strong> <br>
+        어느 순간부터 난 그의 눈치를 보고 있었다. 그의 취향에 맞게 옷을 입었고, 머리를 바꾸었다. 내 삶의 모든 게 정현에게 맞춰져 갔다. … 그때의 나는 늘 목의 이물감에 시달렸다. 크게 거슬리는 정도는 아니었고, 잊고 있다가 침을 삼킬 때면 한두 번씩 따끔 하는 정도였다. 너무 사소해서 남에게 말하기조차 민망하지만 확실히 나의 신경을 자극하는 것. 존재하지 않지만 나에겐 느껴지는 것. 그런 걸 어떻게 다뤄야 하는지 나는 알지 못했다. <br>
+        <strong> p16~17, <초대> </strong> <br>
+          물은 어째선지 무서워졌다. 저렇게 자신을 직시하는 눈빛은 너무 오랜만이었다. 어쩌면 유령이 된 후로 처음일지도. 공포에 떨거나 화를 내거나 욕을 지껄이지 않고 자신을 보는 눈빛은 정말로 처음이었다. 그런 시선에는 면역이 없었다. 차라리 누군가가 빨리 도망가 버렸으면 했다. 그래서 다른 사람들에게 했던 대로, 희고 마른 손목을 휘휘 흔들었다. “도망가라, 도망가라.” 숲속의 누군가는 도망가지 않았다. 아무리 팔을 흔들어도 그 자리에 있었다. 물은 울고 싶어졌다. <br>
+          <strong> p49, <습지의 사랑> </strong> <br>
+            “미안해, 아빠. 하지만 어쩔 수 없어. 아빠 먹이자고 살인을 할 수는 없잖아. 배고파도 참아 봐. 뭔가 방법이 나오겠지.”
+말은 그렇게 했지만, 방법이 나올 기미는 보이지 않았다. 애초에 이미 심장이 멈춘 사람을 살리는 백신은 있을 수 없었다. 머릿속에 ‘좀비 신고 999’가 떠다닌 지는 꽤 되었다. <br>
+<strong> p83, <칵테일, 러브, 좀비> </strong> <br>
+  아버지는 굳이 사과가 아니어도 언젠가 무슨 핑계로든 어머니를 찔렀을 것이다. 나 역시 굳이 오늘이 아니어도 언젠가 아버지를 죽였을 것이다. 동기나 타이밍의 문제가 아니었다. 이것은 언젠가는 벌어지고야 말 일이었던 것이다. 단지 그날이 오늘이었던 것뿐. 질긴 문어 초밥을 꼭꼭 씹어 삼키자 모든 미련이 사라졌다. 그리고 나는 개운한 마음으로 칼을 들어 내 목을 찔렀다. <br>
+<strong> p114, <오버랩 나이프, 나이프> </strong>
+
+      </p>
+    </div>
+    <div class="right-column">
+      <img src="https://oopy.lazyrockets.com/api/v2/notion/image?src=https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2F4619c0ba-b403-407d-948a-07abb736cd03%2F_.jpg&blockId=dc0d7846-e0bd-44e7-92dd-df7ee78ff154" class="column-image">
+    </div>
+  </div>
+</div>
+<strong> <div class="buy-now"> </strong>
+        <a href="https://www.ypbooks.co.kr/book.yp?bookcd=101021671&gubun=NV&NaPm=ct%3Dlid2fod4%7Cci%3Da7928b1134d9734b00d552cc62ecf74c9185f528%7Ctr%3Dboksl1%7Csn%3D5295494%7Chk%3Db1d0923178f45902f2a478aff88531f62e8a9993" target="_blank" class="buy-button">구매하기</a>
+       <p class="book-info">컴퓨터 프로그래밍<br>이달의 책</p>
+    </div>
+  </div>
+</div>
+
+<style>
+  .image-container {
+    display: flex;
+    justify-content: center;
+  }
+
+  .author-image {
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    margin: 5px;
+  }
+
+  .buy-now {
+    text-align: center;
+    margin-top: 10px;
+  }
+
+  .buy-button {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #f44336;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+  }
+
+  .book-info {
+    text-align: center;
+    margin-top: 10px;
+  }
+</style>
+</body>
+</html>
